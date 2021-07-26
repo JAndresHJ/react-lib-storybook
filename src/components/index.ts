@@ -9,3 +9,5 @@ export { default as Select } from './Select';
 export { default as Login } from './Login';
 
 export { default as Link } from './link';
+
+export { default as Spinner } from './Spinner';

@@ -1,21 +1,21 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Table from "./table";
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import Table from './table';
 
-<Meta title="Components/Table" component={Table} />
+<Meta title='Components/Table' component={Table} />
 
 ## Table
 
 #### Practicing documentation on storybook
 
 <Canvas>
-  <Story name="Default">
+  <Story name='Default'>
     <Table
-      headers={["Col 1", "Col 2", "Col 3", "Col 4", "Col 5"]}
+      headers={['Col 1', 'Col 2', 'Col 3', 'Col 4', 'Col 5']}
       rows={[
-        ["This", "is", "just", "a", "test"],
-        ["This", "is", "also", "a", "test"],
-        ["Just", "a", "little", "more", "data"],
-        ["Row", "number", "four", "right", "here"],
+        ['This', 'is', 'just', 'a', 'test'],
+        ['This', 'is', 'also', 'a', 'test'],
+        ['Just', 'a', 'little', 'more', 'data'],
+        ['Row', 'number', 'four', 'right', 'here'],
       ]}
     />
   </Story>

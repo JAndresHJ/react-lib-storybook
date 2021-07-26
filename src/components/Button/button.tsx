@@ -1,6 +1,6 @@
-import React from "react";
-import { ElementType, MouseEventHandler, ReactNode } from "react";
-
+import React from 'react';
+import { ElementType, MouseEventHandler, ReactNode } from 'react';
+import Spinner from '../Spinner/spinner';
 import { StyledButton, StyledIcon } from './styled';
 
 export type ButtonType = 'default' | 'danger' | 'ghost' | 'secondary';
@@ -11,7 +11,7 @@ interface BaseButtonProps {
   icon?: ElementType;
   size?: ComponentSize;
   className?: string;
-  children?: ReactNode
+  children?: ReactNode;
   disabled?: boolean;
   loading?: boolean;
 }
@@ -34,7 +34,10 @@ type CustomNodeProps = {
 
 export type ButtonProps = HTMLButtonProps & HTMLAnchorProps & CustomNodeProps;
 
-const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref) => {
+const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (
+  props,
+  ref
+) => {
   const {
     type = 'default',
     icon,
@@ -46,53 +49,85 @@ const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref
     onClick,
     href,
     as,
-    to
+    to,
   } = props;
 
   const styles = {
     innerType: type,
     size,
     disabled,
-    withText: children != null
+    withText: children != null,
+  };
+
+  const spinnerStyles = {
+    size: size === 'large' ? 25 : size === 'default' ? 20 : 15,
+    light: true,
+  };
+
+  const childrenWithIcon = !icon ? (
+    children
+  ) : (
+    <>
+      {children}
+      <StyledIcon as={icon} />
+    </>
+  );
+
+  if (as && !disabled) {
+    return (
+      <StyledButton as={as} to={to} ref={ref} className={className} {...styles}>
+        {loading ? (
+          <>
+            Loading
+            <Spinner {...spinnerStyles} />
+          </>
+        ) : (
+          childrenWithIcon
+        )}
+      </StyledButton>
+    );
   }
 
-  if (as) {
+  if (href && !disabled) {
     return (
       <StyledButton
-        as={as}
-        to={to}
-        ref={ref}
+        as='a'
+        href={href}
+        ref={ref as React.MutableRefObject<HTMLAnchorElement>}
         className={className}
-        {...styles}>
-        {loading ? 'Loading...' : children}
+        {...styles}
+      >
+        {loading ? (
+          <>
+            Loading
+            <Spinner {...spinnerStyles} />
+          </>
+        ) : (
+          childrenWithIcon
+        )}
       </StyledButton>
-    )
-  }
-
-  if (href) {
-    <StyledButton
-        as={as}
-        to={to}
-        ref={ref}
-        className={className}
-        {...styles}>
-        {loading ? 'Loading...' : children}
-      </StyledButton>
+    );
   }
 
   return (
     <StyledButton
-        as='button'
-        type='button'
-        onClick={onClick}
-        ref={ref as React.MutableRefObject<HTMLButtonElement>}
-        className={className}
-        {...styles}
+      as='button'
+      type='button'
+      onClick={onClick}
+      ref={ref as React.MutableRefObject<HTMLButtonElement>}
+      className={className}
+      {...styles}
     >
-      {loading ? 'Loading...' : children}
+      {loading ? (
+        <>
+          Loading
+          <Spinner {...spinnerStyles} />
+        </>
+      ) : (
+        childrenWithIcon
+      )}
     </StyledButton>
-);
-
-}
+  );
+};
 
 export default React.forwardRef<unknown, ButtonProps>(Button);
