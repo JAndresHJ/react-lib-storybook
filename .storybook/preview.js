@@ -7,3 +7,5 @@ export const parameters = {
     },
   },
 }
+
+import './reset.css';
