@@ -1,5 +1,5 @@
-import Carousel from './carousel';
+import Carrousel from './carousel';
 
 export * from './carousel';
 
-export default Carousel;
+export default Carrousel;

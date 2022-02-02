@@ -93,7 +93,7 @@ const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (
       <StyledButton
         as='a'
         href={href}
-        ref={ref as React.MutableRefObject<HTMLAnchorElement>}
+        ref={ref as React.MutableRefObject<any>}
         className={className}
         {...styles}
       >
