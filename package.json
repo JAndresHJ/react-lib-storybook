@@ -42,10 +42,11 @@
     "copy-fonts": "copyfiles -u 1 src/config/fonts/* lib/",
     "eject": "react-scripts eject",
     "postbuild": "npm run copy-fonts",
-    "prebuild": "npm run clean && npm run compile-icons",
+    "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "start:storybook": "start-storybook -p 6006 -s public",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [

@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Sonar Status: [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JAndresHJ_react-lib-storybook&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=JAndresHJ_react-lib-storybook)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -44,3 +46,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## References
+
+### Crash Course: Making a React Component Library with Storybook and NPM
+https://www.youtube.com/watch?v=7Gbk4h2AYVE

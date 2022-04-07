@@ -22,7 +22,7 @@
     "declaration": true,
     "sourceMap": true,
     "declarationMap": true,
-    "noEmit": false
+    "noEmit": true
   },
   "include": [
     "src"
