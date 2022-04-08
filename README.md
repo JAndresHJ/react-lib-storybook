@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Sonar Status: [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JAndresHJ_react-lib-storybook&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=JAndresHJ_react-lib-storybook)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JAndresHJ_react-lib-storybook&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=JAndresHJ_react-lib-storybook)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
